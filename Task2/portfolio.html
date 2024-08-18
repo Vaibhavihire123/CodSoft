@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Your Name - Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f9f9f9;
+            /* Light grey background for the page */
+        }
+
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+
+            font-weight: bolder;
+            /* Bolder effect for headings */
+        }
+
+        p,
+        a,
+        li,
+        .navbar,
+        .footer,
+        .review-form input,
+        .review-form textarea,
+        .review-form select,
+        .review-form button {
+            text-align: left;
+            font-weight: bolder;
+            /* Bolder effect for paragraphs, links, and other elements */
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+            background-color: #38220f;
+            /* Dark brown */
+        }
+
+        .navbar-brand {
+            color: #ffffff !important;
+            font-weight: bold;
+        }
+
+        .navbar-nav li a {
+            color: #ffffff !important;
+            font-weight: bold;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 600px;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+            color: #ffffff;
+            text-align: center;
+            background-color: rgba(56, 34, 15, 0.5);
+            /* Dark brown with transparency */
+        }
+
+        .content {
+            min-height: 300px;
+            padding: 60px 0;
+        }
+
+        #about .row {
+            display: flex;
+            align-items: center;
+        }
+
+        #about .col-md-8 {
+            text-align: center;
+        }
+
+        #about .col-md-4 {
+            text-align: center;
+        }
+
+        #about p{
+            font-size: large;
+        }
+        #skills .row {
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+        }
+        #skills ul li{
+            font-size: large;
+        }
+
+        #proficiency .row {
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+        }
+
+        #proficiency .col-md-8 {
+            text-align: left;
+        }
+
+        #proficiency .col-md-4 {
+            text-align: center;
+        }
+
+        .progress-bar {
+            background-color: #38220f;
+            /* Dark brown */
+            color: #ffffff;
+            text-align: center;
+        }
+
+        #projects .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #projects .thumbnail {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        /* Resume Section */
+        #resume {
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+            text-align: center;
+        }
+
+        #resume img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #resume a {
+            background-color: #38220f;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+            text-align: center;
+        }
+
+
+        #contact img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .thumbnail {
+            border: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            background-color: #38220f;
+            /* Dark brown */
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .footer-section {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .footer p {
+            text-align: center;
+            padding: 10px 0;
+            background: #38220f;
+            /* Dark brown */
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .review-form input,
+        .review-form textarea,
+        .review-form select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            /* Light grey border for input fields */
+        }
+
+        .review-form button {
+            background-color: #38220f;
+            /* Dark brown */
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .bg-grey {
+            background-color: #f1f1f1;
+            /* Light grey background for sections */
+        }
+    </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <!-- Header Section -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#myPage">Hire Vaibhavi</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel Section -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="path/to/your/image1.jpg" alt="Slide 1">
+            </div>
+            <div class="item">
+                <img src="path/to/your/image2.jpg" alt="Slide 2">
+            </div>
+            <div class="item">
+                <img src="path/to/your/image3.jpg" alt="Slide 3">
+            </div>
+        </div>
+
+        <div class="carousel-caption">
+            <h2>Passionate About Problem-Solving Through Code</h2>
+            <p>I am a software developer with a strong foundation in computer applications, holding both BCA and MCA
+                degrees. My passion lies in creating efficient, user-friendly software that meets the unique needs of
+                businesses and individuals alike</p>
+        </div>
+
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 text-center">
+                    <h1>About Me</h1>
+                    <p>Software Developer</p>
+                    <p>The main career objective is to gain self-confidence& skills like team work, communication
+                        skill,<br> Enhancethe coding skill by getting a good platform to workwith professionals.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="img1.jpg" alt="Your Photo" class="img-responsive img-circle"
+                        style="width:300px; height: 300px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Skills Section -->
+    <div id="skills" class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="img2.jpg" alt="Skills Image" class="img-responsive">
+            </div>
+            <div class="col-md-8 text-center">
+                <h1>Skills</h1>
+                <ul>
+                    <li>Problem-Solving</li>
+                    <li>Team Collaboration</li>
+                    <li>Communication Skills</li>
+                    <!-- Add more skills as needed -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Proficiency Section -->
+    <div id="proficiency" class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Proficiency</h1>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 80%;">
+                        Frontend
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 70%;">
+                        Backend
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 60%;">
+                        Programming
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="img3.png" alt="Proficiency Image" class="img-responsive">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Projects Section -->
+    <div id="projects" class="container text-center bg-grey">
+        <h1>Projects</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="project1.jpeg" alt="Project 1">
+                    <div class="caption">
+                        <h3>Pet adoption web application</h3>
+                        <p>AdoptBuddy is a comprehensive pet adoption webapplication designed to facilitate the seamless
+                            connectionbetween pet owners and adoption centers</p>
+                        <p>Frontend : HTML5, CSS, Bootstrap3<br>
+                            backend : JAVA<br>
+                            Database : MYSQL
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="project2.png" alt="Project 2">
+                    <div class="caption">
+                        <h3>Event Advertising Web Application</h3>
+                        <p>Designed and Developed an innovative event advertising web application that serves as a
+                            comprehensive platform for disseminating information about local-level upcoming events</p>
+                        <p>Frontend : HTML5, CSS, Bootstrap3<br>
+                            backend : JAVA<br>
+                            Database : MYSQL
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="project3.jpg" alt="Project 3">
+                    <div class="caption">
+                        <h3>Online Grocery Shop Management</h3>
+                        <p>The objective is to provide online services who wish to buy grocery products and for owners
+                            to maintain and update info regarding the products and about the customers</p>
+                        <p>Frontend : HTML5, CSS<br>
+                            backend : C#, ASP.NET<br>
+                            Database : MYSQL
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resume Section -->
+    <div id="resume" class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="img4.avif" alt="Resume Image" class="img-responsive">
+            </div>
+            <div class="col-md-6 text-right">
+                <h1>Resume</h1>
+                <a href="resume.pdf" class="btn btn-primary" download>Download My Resume</a>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Section -->
+    <div id="contact" class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Contact</h1>
+                <p>Email: vaibhavihire0911@gmail.com</p>
+                <p>Phone: +8482890200</p>
+            </div>
+            <div class="col-md-6">
+                <img src="img5.avif" alt="Contact Image" class="img-responsive">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="footer-section">
+            <h2>Vaibhavi Hire</h2>
+            <p>Software Development</p>
+        </div>
+
+
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
